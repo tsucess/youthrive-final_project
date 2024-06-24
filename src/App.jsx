@@ -10,6 +10,7 @@ import Furniture from "./components/furniture/Furniture";
 import Slider from "./components/slider/Slider";
 
 function App() {
+  const page = "home"
   return (
     <>
       <header className="nav-section">
@@ -17,7 +18,7 @@ function App() {
         <Hero />
       </header>
       <Gallery />
-      <Products />
+      <Products page={page}/>
       <Slider />
       <Furniture />
       <Footer />

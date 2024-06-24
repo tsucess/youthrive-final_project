@@ -2,6 +2,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import { MdCompareArrows } from "react-icons/md";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { useState } from "react";
+import Paginations from "../pagination/Paginations"
 
 const productData = [
   {
@@ -70,16 +71,30 @@ const productData = [
   }
 ];
 
-const Products = () => {
+const Products = ({page}) => {
+  
+  const initial = page == "home"? 4 : 8;
+  const initialPagination = page == "home"? 8 : 4;
+  
+// pagination feature 
+const [currentPage, setCurrentPage] = useState(1);
+const [postsPerPage, setPostPerPage] = useState(initialPagination);
 
-  const [showMore, setShowMore] = useState(4);
+const lastPostIndex = currentPage * postsPerPage;
+const firstPostIndex = lastPostIndex - postsPerPage
+const currentPost = productData && productData.slice(firstPostIndex, lastPostIndex)
+
+
+
+
+  const [showMore, setShowMore] = useState(initial);
 
   return (
     <div className="container-fluid container_products">
       <div className="header"><h2 className="title">Our Products</h2></div>
       <div className="row">
-        {productData &&
-          productData.slice(0, showMore).map((item, key) => {
+        {currentPost &&
+          currentPost.slice(0, showMore).map((item, key) => {
             return (
               <div className="col-12 col-md-3" key={key}>
                 <div className="card">
@@ -110,8 +125,21 @@ const Products = () => {
           })
           }
       </div>
-      <div className="row">
-        <button className="btn btn-lg show_more_btn" onClick={() => setShowMore(showMore > 4 ? 4 : productData.length)}>{showMore > 3 ? "Show Less" : "Show More"} </button>
+       <div className="row">
+     {
+       page === "home" && 
+        <button className="btn btn-lg show_more_btn" onClick={() => setShowMore(showMore > 4 ? 4 : productData.length)}>{showMore > 4 ? "Show Less" : "Show More"} </button>
+     }
+     {
+     page === "shop" &&
+        <Paginations  
+            totalPosts = {productData && productData.length} 
+            postsPerPage = {postsPerPage}
+            setCurrentPage= {setCurrentPage}
+            currentPage={currentPage}
+            
+            />
+        } 
       </div>
     </div>
   );

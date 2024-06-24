@@ -5,7 +5,6 @@
 
 }
 
-
 .container_services .service {
 	display: flex;
 	flex-flow: row wrap;
@@ -13,4 +12,17 @@
 }
 .container_services .service_info {
 	margin: 0;
+}
+
+.btn-pagination button {
+	background: #F9F1E7;
+
+}
+.btn-pagination button:hover {
+	background: #B88E2F;
+
+}
+.btn-pagination button .active{
+	background: #B88E2F !important;
+
 }

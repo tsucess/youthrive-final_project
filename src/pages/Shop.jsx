@@ -7,12 +7,13 @@ import Products from "../components/products/Products";
 import Services from "../components/services/Services";
 
 function Shop() {
+  const page = "shop"
   return (
     <>
       <header className="nav-section">
         <Nav />
       </header>
-      <Products />
+      <Products page={page} />
       <Services />
       <Footer />
     </>
