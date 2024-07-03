@@ -11,6 +11,7 @@ import Slider from "./components/slider/Slider";
 
 function App() {
   const page = "home"
+  const title = "Our Products";
   return (
     <>
       <header className="nav-section">

@@ -3,78 +3,13 @@ import { MdCompareArrows } from "react-icons/md";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { useState } from "react";
 import Paginations from "../pagination/Paginations"
+import { Link } from "react-router-dom";
+import {productData} from "../imagedata/Imagedata";
 
-const productData = [
-  {
-    title: "Syltherine",
-    sub_title: "Stylish cafe chair",
-    price: "2.500.000",
-    discount: "3.500.000",
-    percentage: "-30%",
-    img: "http://localhost:5173/src/assets/images/image.png"
-  },
-  {
-    title: "Leviosa",
-    sub_title: "Stylish cafe chair",
-    price: "2.500.000",
-    discount: "",
-    percentage: "",
-    img: "http://localhost:5173/src/assets/images/image2.png"
-  },
-  {
-    title: "Lolito",
-    sub_title: "Luxury big sofa",
-    price: "7.000.000",
-    discount: "3.500.000",
-    percentage: "-50%",
-    img: "http://localhost:5173/src/assets/images/image3.png"
-  },
-  {
-    title: "Respira",
-    sub_title: "Outdoor bar table and stool",
-    price: "500.000",
-    discount: "",
-    percentage: "New",
-    img: "http://localhost:5173/src/assets/images/image4.png"
-  },
-  {
-    title: "Grifo",
-    sub_title: "Night lamp",
-    price: "2.500.000",
-    discount: "1.500.000",
-    percentage: "",
-    img: "http://localhost:5173/src/assets/images/image5.png"
-  },
-  {
-    title: "Muggo",
-    sub_title: "Small mug",
-    price: "1.50.000",
-    discount: "3.500.000",
-    percentage: "New",
-    img: "http://localhost:5173/src/assets/images/image6.png"
-  },
-  {
-    title: "Pingky",
-    sub_title: "Cute bed set",
-    price: "7.000.000",
-    discount: "3.500.000",
-    percentage: "-50%",
-    img: "http://localhost:5173/src/assets/images/image7.png"
-  },
-  {
-    title: "Potty",
-    sub_title: "Minimalist flower pot",
-    price: "500.000",
-    discount: "3.500.000",
-    percentage: "New",
-    img: "http://localhost:5173/src/assets/images/image8.png"
-  }
-];
-
-const Products = ({page}) => {
+const Products = ({page, title}) => {
   
-  const initial = page == "home"? 4 : 8;
-  const initialPagination = page == "home"? 8 : 4;
+  const initial = page == "home" ? 4 : 8;
+  const initialPagination = page === "home" ? 8 : 4;
   
 // pagination feature 
 const [currentPage, setCurrentPage] = useState(1);
@@ -91,7 +26,7 @@ const currentPost = productData && productData.slice(firstPostIndex, lastPostInd
 
   return (
     <div className="container-fluid container_products">
-      <div className="header"><h2 className="title">Our Products</h2></div>
+      <div className="header"><h2 className="title">{title}</h2></div>
       <div className="row">
         {currentPost &&
           currentPost.slice(0, showMore).map((item, key) => {
@@ -104,22 +39,28 @@ const currentPost = productData && productData.slice(firstPostIndex, lastPostInd
                     <p className="card-text">{item.sub_title}</p>
                     <p className="card-text price">
                       <span className="fw-bold">Rp {item.price}</span> 
-                      &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                       <small className="text-body-secondary">{item.discount && "Rp "+item.discount} </small>
                     </p>
                   </div>
                     { item.percentage !== "" &&
                       <div className= {item.percentage === "New"? "angle_tag new_tag" : "angle_tag percentage_tag" }>{item.percentage}</div>}
-                  <div className="card_hover">
-                    <button type="button" className="btn btn-lg hover_btn">Add to cart</button>
-                    <br />
-                    <span>
-                      <span><IoShareSocialOutline className="icon" />Share</span>
-                      <span><MdCompareArrows className="icon" />compare</span>
-                      <span><IoIosHeartEmpty className="icon" />Like</span>
-                    </span>
-                  </div>
-                </div>
+                        <div className="card_hover">
+                          <button type="button" className="btn btn-lg hover_btn">Add to cart</button>
+                          <br />
+                          <span>
+                            <Link to="../" className="btn">
+                                <IoShareSocialOutline className="icon" />&nbsp;Share
+                            </Link>
+                            <Link to="../compare" className="btn">
+                                <MdCompareArrows className="icon" />&nbsp;compare
+                            </Link>
+                            <button className="btn">
+                                <IoIosHeartEmpty className="icon" />&nbsp;Like
+                            </button>
+                          </span>
+                        </div>
+                    </div>
               </div>
             );
           })

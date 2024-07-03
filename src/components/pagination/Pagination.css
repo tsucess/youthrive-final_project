@@ -1,0 +1,13 @@
+
+
+.btn-pagination button {
+	background: #F9F1E7;
+}
+.btn-pagination button:hover {
+	background: #B88E2F;
+
+}
+.btn-pagination button .active{
+	background: #B88E2F !important;
+
+}

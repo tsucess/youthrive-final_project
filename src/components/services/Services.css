@@ -1,0 +1,35 @@
+.container_services {
+	background: #FAF3EA;
+	padding: 4rem 2rem;
+	text-align: center;
+
+}
+
+.container_services .service {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	text-align: left;
+	gap: 1rem;
+}
+.container_services .service .icons{
+	margin: 0;
+}
+.container_services .service .icons img{
+	width: 50px;
+}
+
+.container_services .service_info {
+	margin: 0;
+}
+.container_services .service_info h4{
+	color:#242424;
+	font-size: 1.5625rem;
+	font-weight: 600;
+}
+.container_services .service_info p {
+	color: #898989;
+	font-size: 1.25rem;
+	font-weight: 500;
+
+} 

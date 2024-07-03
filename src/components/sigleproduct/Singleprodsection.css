@@ -1,0 +1,147 @@
+.container_sigle-product {
+  /* height: 820px; */
+  padding: 2rem;
+}
+
+.container_sigle-product .display-images {
+  display: flex;
+}
+
+.container_sigle-product .display-images .other-images .images {
+  background: #d9d9d9;
+  width: 76px;
+  height: 80px;
+  border-radius: 10px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.container_sigle-product .display-images .main-image .image-container {
+  width: 423px;
+  height: 500px;
+  border-radius: 10px;
+  background: #f9f1e7;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container_sigle-product .item-info {
+  padding-bottom: 2rem;
+}
+.container_sigle-product .item-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 63px;
+}
+.container_sigle-product .item-price {
+  font-family: "Poppins", sans-serif;
+  color: #9f9f9f;
+  line-height: 63px;
+}
+
+.container_sigle-product .item-ratings span {
+  font-family: "Poppins", sans-serif;
+  color: #9f9f9f;
+}
+.container_sigle-product .desc {
+  font-family: "Poppins", sans-serif;
+  width: 60%;
+  margin: 1rem 0;
+  line-height: 1.8rem;
+}
+
+.container_sigle-product .item-sizes p,
+.container_sigle-product .item-colors p {
+  font-family: "Poppins", sans-serif;
+  color: #9f9f9f;
+  margin: 0.5rem 0;
+}
+
+.container_sigle-product .item-sizes span {
+  display: flex;
+}
+.container_sigle-product .item-sizes .size {
+  width: 30px;
+  height: 30px;
+  margin: 1rem 0.5rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+  background: #f9f1e7;
+  text-align: center;
+}
+.container_sigle-product .item-sizes .size .active {
+  background: #b88e2f;
+}
+
+.container_sigle-product .item-colors span {
+  display: flex;
+  margin: 1rem 0;
+}
+.container_sigle-product .item-colors .color {
+  width: 30px;
+  height: 30px;
+  margin: 1rem 0.4rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background: #000000;
+}
+.container_sigle-product .item-colors .color-1 {
+  background: #816dfa;
+}
+.container_sigle-product .item-colors .color-3 {
+  background: #b88e2f;
+}
+
+.container_sigle-product .call-to-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: start;
+  text-align: left;
+}
+.container_sigle-product .call-to-actions .count {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  margin: 0;
+  width: 123px;
+  height: 64px;
+  border-radius: 10px;
+  border: 1px solid #9f9f9f;
+}
+.container_sigle-product .call-to-actions .count button {
+  background: none;
+  font-size: 1.2rem;
+  height: 3rem;
+}
+.container_sigle-product .call-to-actions .count button:hover {
+  font-weight: 900;
+}
+
+.container_sigle-product .call-to-actions >button {
+  width: 215px;
+  height: 64px;
+  border-radius: 15px;
+  border: 1px solid #000000;
+}
+.container_sigle-product .call-to-actions >button:hover {
+  background: #b88e2f;
+  color: #ffffff;
+  border: none;
+}
+
+.container_sigle-product .item-data
+{
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+.container_sigle-product .item-data tr td{
+    color: #9F9F9F;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5rem;
+    font-size: 1rem;
+
+  }

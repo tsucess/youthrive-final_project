@@ -8,15 +8,20 @@ import './assets/css/style.css'
 import App from './App.jsx'
 import ErrorPage from './pages/ErrorPage.jsx';
 import Shop from './pages/Shop.jsx';
+import Singleproduct from './pages/SingleProduct.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App /> 
   },
   {
     path: "/shop",
     element: <Shop />
+  },
+  {
+    path: `/singleproduct`,
+    element: <Singleproduct />
   },
   {
     path: "*",

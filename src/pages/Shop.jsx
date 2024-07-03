@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/Footer";
@@ -10,9 +8,7 @@ function Shop() {
   const page = "shop"
   return (
     <>
-      <header className="nav-section">
-        <Nav />
-      </header>
+      <Nav />
       <Products page={page} />
       <Services />
       <Footer />

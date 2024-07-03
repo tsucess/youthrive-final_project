@@ -10,7 +10,7 @@ const Services = () => {
 	<div className="container-fluid container_services">
 		<div className="row p-0 m-0">
 			<div className="col-12 col-md-3 service">
-					<div className="icons">
+					<div className="icon">
 						<img src={quality} alt="icons" />
 					</div>
 					<div className="service_info">
@@ -19,7 +19,7 @@ const Services = () => {
 					</div>
 			</div>
 			<div className="col-12 col-md-3 service">
-					<div className="icons">
+					<div className="icon">
 						<img src={warranty} alt="icons" />
 					</div>
 					<div className="service_info">
@@ -28,7 +28,7 @@ const Services = () => {
 					</div>
 			</div>
 			<div className="col-12 col-md-3 service">
-					<div className="icons">
+					<div className="icon">
 						<img src={freeshipping} alt="icons" />
 					</div>
 					<div className="service_info">
@@ -37,7 +37,7 @@ const Services = () => {
 					</div>
 			</div>
 			<div className="col-12 col-md-3 service">
-					<div className="icons">
+					<div className="icon">
 						<img src={twofourseven} alt="icons" />
 					</div>
 					<div className="service_info">
