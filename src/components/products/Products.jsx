@@ -32,36 +32,39 @@ const currentPost = productData && productData.slice(firstPostIndex, lastPostInd
           currentPost.slice(0, showMore).map((item, key) => {
             return (
               <div className="col-12 col-md-3" key={key}>
-                <div className="card">
-                  <img src={item.img} className="card-img-top" alt="..." />
-                  <div className="card-body">
-                    <h5 className="card-title">{item.title}</h5>
-                    <p className="card-text">{item.sub_title}</p>
-                    <p className="card-text price">
-                      <span className="fw-bold">Rp {item.price}</span> 
-                      &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                      <small className="text-body-secondary">{item.discount && "Rp "+item.discount} </small>
-                    </p>
-                  </div>
-                    { item.percentage !== "" &&
-                      <div className= {item.percentage === "New"? "angle_tag new_tag" : "angle_tag percentage_tag" }>{item.percentage}</div>}
-                        <div className="card_hover">
-                          <button type="button" className="btn btn-lg hover_btn">Add to cart</button>
-                          <br />
-                          <span>
-                            <Link to="../" className="btn">
-                                <IoShareSocialOutline className="icon" />&nbsp;Share
-                            </Link>
-                            <Link to="../compare" className="btn">
-                                <MdCompareArrows className="icon" />&nbsp;compare
-                            </Link>
-                            <button className="btn">
-                                <IoIosHeartEmpty className="icon" />&nbsp;Like
-                            </button>
-                          </span>
-                        </div>
+                  <Link to={`../singleproduct/${item.id}`}>
+                        <div className="card">
+                    <img src={item.img} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                      <h5 className="card-title">{item.title}</h5>
+                      <p className="card-text">{item.sub_title}</p>
+                      <p className="card-text price">
+                        <span className="fw-bold">Rp {item.price}</span> 
+                        &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        <small className="text-body-secondary">{item.discount && "Rp "+item.discount} </small>
+                      </p>
                     </div>
+                      { item.percentage !== "" &&
+                        <div className= {item.percentage === "New"? "angle_tag new_tag" : "angle_tag percentage_tag" }>{item.percentage}</div>}
+                          <div className="card_hover">
+                            <button type="button" className="btn btn-lg hover_btn">Add to cart</button>
+                            <br />
+                            <span>
+                              <Link to="../" className="btn">
+                                  <IoShareSocialOutline className="icon" />&nbsp;Share
+                              </Link>
+                              <Link to="../compare" className="btn">
+                                  <MdCompareArrows className="icon" />&nbsp;compare
+                              </Link>
+                              <button className="btn">
+                                  <IoIosHeartEmpty className="icon" />&nbsp;Like
+                              </button>
+                            </span>
+                          </div>
+                        </div>
+                  </Link>
               </div>
+
             );
           })
           }
